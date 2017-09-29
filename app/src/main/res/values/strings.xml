@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Time Calculator</string>
+    <string name="from_date">Fecha Inicio</string>
+    <string name="to_date">Fecha Fin</string>
+    <string name="today_button">Hoy!</string>
+    <string name="calculate_button">Calcular</string>
+    <string name="time_elapsed_label">Tiempo Transcurrido:</string>
+    <string name="elapsed_days_label">Dias Transcurridos:</string>
+
+    <!--Form validations-->
+    <string name="initial_date_required">Fecha Inicio Requerida!!</string>
+    <string name="end_date_required">Fecha Fin Requerida!!</string>
+</resources>

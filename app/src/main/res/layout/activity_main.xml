@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.maxluzon.timecalculator.MainActivity">
+
+    <EditText
+        android:id="@+id/initial_date"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/from_date"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/end_date"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/initial_date"
+        android:hint="@string/to_date"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/end_date"
+        android:layout_margin="20sp"
+        android:text="@string/calculate_button"/>
+
+    <Button
+        android:id="@+id/today_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/today_button"
+        android:layout_alignBottom="@id/end_date"
+        android:layout_alignRight="@id/calculate_button"
+        android:layout_alignEnd="@id/calculate_button"
+        android:layout_toRightOf="@id/end_date"
+        android:layout_toEndOf="@id/end_date" />
+
+    <TextView
+        android:id="@+id/time_elapsed_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="@string/time_elapsed_label"
+        android:layout_below="@+id/calculate_button"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/time_elapsed_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:layout_below="@id/calculate_button"
+        android:layout_toRightOf="@id/time_elapsed_text"
+        android:layout_toEndOf="@id/time_elapsed_text"
+        android:text=""
+        android:textStyle="italic"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/days_elapsed_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="@string/elapsed_days_label"
+        android:layout_below="@id/time_elapsed_text"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/days_elapsed_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:layout_toRightOf="@id/days_elapsed_text"
+        android:layout_toEndOf="@id/days_elapsed_text"
+        android:layout_below="@id/time_elapsed_result"
+        android:text=""
+        android:textStyle="italic"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
