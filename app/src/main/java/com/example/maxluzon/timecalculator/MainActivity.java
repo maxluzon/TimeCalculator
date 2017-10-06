@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(mInitialDateCalendar.after(mEndDateCalendar)){
             Toast.makeText(this, "The EndDate must be after the Initial Date", Toast.LENGTH_SHORT).show();
         }else{
-
             //-----Total Elapsed Days
             long diff = mEndDateCalendar.getTimeInMillis() - mInitialDateCalendar.getTimeInMillis();
             long totalElapsedDays = diff/(1000*60*60*24);
@@ -109,8 +108,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             && mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) > mEndDateCalendar.get(Calendar.DAY_OF_MONTH)))
                 elapsedYears--;
 
-            int elapsedMonths = mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH);
-            int elapsedDays = mEndDateCalendar.get(Calendar.YEAR) - mInitialDateCalendar.get(Calendar.YEAR);
+            int elapsedMonths;
+            int elapsedDays = 0;
+            int lastDayOfMonth = mInitialDateCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+            if(mInitialDateCalendar.get(Calendar.MONTH) <= mEndDateCalendar.get(Calendar.MONTH)){
+                if(mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) <= mEndDateCalendar.get(Calendar.DAY_OF_MONTH)){
+                    elapsedMonths = mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH);
+
+                    if(mInitialDateCalendar.get(Calendar.MONTH) == mEndDateCalendar.get(Calendar.MONTH)){
+                        elapsedDays = mEndDateCalendar.get(Calendar.DAY_OF_MONTH)-mInitialDateCalendar.get(Calendar.DAY_OF_MONTH);
+                    }
+                }else{
+                    elapsedMonths = (mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH) - 1 + 12) % 12;
+                    elapsedDays = lastDayOfMonth - (mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) - mEndDateCalendar.get(Calendar.DAY_OF_MONTH));
+                }
+            }else{
+                if(mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) > mEndDateCalendar.get(Calendar.DAY_OF_MONTH)){
+                    elapsedMonths = mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH)-1+12;
+                    elapsedDays = lastDayOfMonth - (mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) - mEndDateCalendar.get(Calendar.DAY_OF_MONTH));
+                }else{
+                    elapsedMonths = mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH) +12;
+                    elapsedDays = mEndDateCalendar.get(Calendar.DAY_OF_MONTH) - mInitialDateCalendar.get(Calendar.DAY_OF_MONTH);
+                }
+
+            }
 
             StringBuilder sb = new StringBuilder();
             sb.append(elapsedYears);
