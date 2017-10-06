@@ -115,10 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(mInitialDateCalendar.get(Calendar.MONTH) <= mEndDateCalendar.get(Calendar.MONTH)){
                 if(mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) <= mEndDateCalendar.get(Calendar.DAY_OF_MONTH)){
                     elapsedMonths = mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH);
-
-                    if(mInitialDateCalendar.get(Calendar.MONTH) == mEndDateCalendar.get(Calendar.MONTH)){
-                        elapsedDays = mEndDateCalendar.get(Calendar.DAY_OF_MONTH)-mInitialDateCalendar.get(Calendar.DAY_OF_MONTH);
-                    }
+                    elapsedDays = mEndDateCalendar.get(Calendar.DAY_OF_MONTH)-mInitialDateCalendar.get(Calendar.DAY_OF_MONTH);
                 }else{
                     elapsedMonths = (mEndDateCalendar.get(Calendar.MONTH) - mInitialDateCalendar.get(Calendar.MONTH) - 1 + 12) % 12;
                     elapsedDays = lastDayOfMonth - (mInitialDateCalendar.get(Calendar.DAY_OF_MONTH) - mEndDateCalendar.get(Calendar.DAY_OF_MONTH));
