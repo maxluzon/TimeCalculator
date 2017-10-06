@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void calculateElapsedTime(){
         if(mInitialDateCalendar.after(mEndDateCalendar)){
-            Toast.makeText(this, "The EndDate must be after the Initial Date", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.endate_after_initialdate_validation, Toast.LENGTH_SHORT).show();
         }else{
             //-----Total Elapsed Days
             long diff = mEndDateCalendar.getTimeInMillis() - mInitialDateCalendar.getTimeInMillis();

@@ -8,4 +8,5 @@
 
     <string name="initial_date_button">Fecha Inicio</string>
     <string name="end_date_button">Fecha Fin</string>
+    <string name="endate_after_initialdate_validation">The EndDate must be after the Initial Date</string>
 </resources>
