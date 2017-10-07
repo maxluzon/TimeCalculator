@@ -7,3 +7,4 @@ For example: 1 year, 2 months and 3 days.
 It has simple form validations such as:
 - Required fields
 - Initial date must be older that end date.
+-
