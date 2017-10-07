@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 elapsedYears--;
 
             int elapsedMonths;
-            int elapsedDays = 0;
+            int elapsedDays;
             int lastDayOfMonth = mInitialDateCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 
             if(mInitialDateCalendar.get(Calendar.MONTH) <= mEndDateCalendar.get(Calendar.MONTH)){
